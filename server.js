@@ -23,6 +23,20 @@ mapsFiles.forEach((mapsFile)=>{
     maps[map.room] = map
 })
 
+net.createServer(socket=> {
 
-console.log(maps);
-// maps.rm_start_town.
+    console.log("socket connected");
+    
+    socket.on('error', err => {
+        console.log("socket error" + err.toString());
+    });
+    socket.on('end', () => {
+        console.log("socket closed");        
+    });
+    socket.on('data', data => {
+        console.log("socket data " + data.toString());
+    });
+
+}).listen(config.port);
+
+console.log("initialize complited server runninf" + config.port + " for " + config.environment)

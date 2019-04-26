@@ -18,7 +18,7 @@ const common_conf = {
 const conf = {
     
     production: {
-        ip: args.ip || "0.0.0.0",
+        ip: args.ip || "127.0.0.1",
         port: args.port || 8081,
         database: "mongodb://127.0.0.1/game_prod"
     },
